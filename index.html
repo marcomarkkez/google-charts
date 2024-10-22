@@ -80,39 +80,65 @@ Easy Tutorials (Productor). (s.f.). How To Create Chart Or Graph On HTML CSS Web
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Gráfica 1: Diagrama de dispersión
+        Gráfica 1: Gráfico de áreas
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
+
         <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Age', 'Weight'],
-          [ 8,      12],
-          [ 4,      5.5],
-          [ 11,     14],
-          [ 4,      5],
-          [ 3,      3.5],
-          [ 6.5,    7]
+          ['Estado', '2008', '2010', '2012', '2014', '2016', '2018'],
+          ['Aguascalientes',	'435.3',	'456.8',	'467.6',	'442.9',	'369.7',	'351.5'],
+          ['Baja California',	'809.7',	'1019.8',	'1010.1',	'984.9',	'789.1',	'848.4'],
+          ['Baja California Sur',	'130.5',	'203',	'211.3',	'226.2',	'175.6',	'151.7'],
+          ['Campeche',	'373.1',	'425.3',	'387.9',	'391',	'405',	'440.4'],
+          ['Coahuila',	'885.8',	'775.9',	'1799.3',	'885.8',	'745.9',	'691.4'],
+          ['Colima',	'173.4',	'230.3',	'237.2',	'244.9',	'248.7',	'235.6'],
+          ['Chiapas',	'3682.3',	'3866.3',	'3782.3',	'3961',	'4114',	'4174.6'],
+          ['Chihuahua',	'1105.1',	'1371.6',	'1272.7',	'1265.5',	'1150',	'1005.7'],
+          ['Ciudad de México',	'2465.7',	'2537.2',	'2565.3',	'2502.5',	'2434.4',	'2682.7'],
+          ['Durango',	'791.4',	'864.2',	'858.7',	'1761.2',	'643.3',	'680'],
+          ['Guanajuato',	'2403.6',	'2703.7',	'2525.8',	'2683.3',	'2480.7',	'2587.8'],
+          ['Guerrero',	'2319.6',	'2330',	'2442.9',	'2315.4',	'2314.7',	'2412.2'],
+          ['Hidalgo',	'1443.6',	'1477.1',	'1465.9',	'1547.8',	'1478.8',	'1314'],
+          ['Jalisco',	'2657.1',	'2766.7',	'3051',	'2780.2',	'2560.6',	'2337.6'],
+          ['México',	'6578.2',	'6712.1',	'7328.7',	'8260.9',	'8230.2',	'7546.5'],
+          ['Michoacán',	'2411.2',	'2424.8',	'2447.7',	'2708.6',	'2565.9',	'2161.9'],
+          ['Morelos',	'857.6',	'782.2',	'843.5',	'993.7',	'165.9',	'1013.3'],
+          ['Nayarit',	'444.1',	'461.2',	'553.5',	'488.8',	'470.1',	'451'],
+          ['Nuevo León',	'976.3',	'994.4',	'1132.9',	'1022.7',	'1737.8',	'773'],
+          ['Oaxaca',	'2354.4',	'2506.3',	'2434.6',	'2662.7',	'2847.3',	'2714.7'],
+          ['Puebla',	'3705.6',	'3616.3',	'3878.1',	'3958.8',	'3728.2',	'3763.7'],
+          ['Querétaro',	'629.1',	'767',	'707.4',	'675.7',	'635.7',	'579.2'],
+          ['Quintana Roo',	'428.1',	'471.7',	'563.3',	'553',	'471',	'474.8'],
+          ['San Luis Potosí',	'1304.4',	'1375.3',	'1354.2',	'1338.1',	'1267.7',	'1229'],
+          ['Sinaloa',	'905.6',	'1048.6',	'1055.6',	'1167.1',	'920.7',	'946.9'],
+          ['Sonora',	'716.9',	'905.2',	'821.3',	'852.1',	'831.4',	'863'],
+          ['Tabasco',	'1188',	'1201.6',	'1149.4',	'1160.8',	'1228.1',	'1320.2'],
+          ['Tamaulipas',	'1097.7',	'1301.7',	'1315.6',	'1330.7',	'1156.2',	'1287.9'],
+          ['Tlaxcala',	'687.7',	'719',	'711.9',	'745.1',	'701.8',	'645.8'],
+          ['Veracruz',	'3879',	'4448',	'4141.8',	'4634.2',	'5049.5',	'5088.6'],
+          ['Yucatán',	'907',	'958.5',	'996.9',	'957.9',	'901.9',	'900.5'],
+          ['Zacatecas',	'742.2',	'911.5',	'835.5',	'819.8',	'1780.3',	'1755.2']
         ]);
 
         var options = {
-          title: 'Age vs. Weight comparison',
-          hAxis: {title: 'Age', minValue: 0, maxValue: 15},
-          vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
-          legend: 'none'
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
         };
 
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div_1'));
-
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div_1'));
         chart.draw(data, options);
       }
     </script>
-<div id="chart_div_1" style="width: 900px; height: 500px;"></div>
+
+        <div id="chart_div_1" style="width: 100%; height: 500px;"></div>
 
       </div>
     </div>
